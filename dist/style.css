@@ -1,0 +1,8 @@
+body {
+    display: flex;
+}
+
+.projectListPriority {
+    height: 5px;
+    width: 5px;
+}

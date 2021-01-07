@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="projects">
+        <h1>Logo</h1>
+        <div id="newProject">New Project +</div>
+        <div id="projectList"></div>
+    </div>
+
+    <div id="tasks">
+        <div id="taskFrameTitle">
+            <div id="projectTitle">Open a project to view your tasks!</div>
+        </div>
+        <div id="taskList"></div>
+    </div>
+
+    <div id="overlay">
+        <div id="overlayContainer"></div>
+        <div id="newProjectText">Enter new project info</div>
+        <form>
+            <label for="projectNameIn" class="newProjectLabel">Project Name:</label><br>
+            <input type="text" name="projectNameIn" class="newProjectInput">
+            <label for="projectNotesIn" class="newProjectLabel">Description:</label>
+            <input type="text" name="projectNotesIn" class="newProjectInput">
+            <label for="projectDueDate" class="newProjectLabel">Due Date:</label>
+            <input type="text" name="projectDueDate" value="any format" class="newProjectInput">
+            <div id="priorityButtons">
+                <p id="newProjectLabel"></p>
+                <input type="radio" name="highPriority" class="newProjectRadioInput">
+                <label for="highPriority" class="newProjectRadioLabel" value="3">High</label><br>
+                <input type="radio" name="highPriority" class="newProjectRadioInput">
+                <label for="highPriority" class="newProjectRadioLabel" value="2">Medium</label><br>
+                <input type="radio" name="highPriority" class="newProjectRadioInput">
+                <label for="highPriority" class="newProjectRadioLabel" value="1" checked>Low</label><br>
+            </div>
+
+            <input type="submit" id="newProjectSubmit">
+        </form>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
