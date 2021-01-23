@@ -4,47 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <link rel="shortcut icon" href="#" />
+    <title>Toodle: To Do List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Khula:wght@600&display=swap');
+        </style>
 
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="projects">
-        <h1>Logo</h1>
-        <div id="newProject">New Project +</div>
-        <div id="projectList"></div>
-    </div>
-
-    <div id="tasks">
-        <div id="taskFrameTitle">
-            <div id="projectTitle">Open a project to view your tasks!</div>
+    <div id="container">
+        <div id="projects">
+            <h1>Toodle</h1>
+            <div id="newProject">New Project +</div>
+            <div id="projectList"></div>
         </div>
-        <div id="taskList"></div>
+
+        <div id="tasks">
+            <div id="taskFrameTitle">
+                <div id="projectSubtitle">
+                    <div id="projectTitle">Open a project to view your tasks.</div>
+                    <div class='projectSubSub'></div>
+                </div>
+                <div id="newTaskDiv"></div>
+            </div>
+            <div id="taskList"></div>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="overlayContainer">
+            <div id="newProjectText"></div>
+            <div id="newProjectExit">X</div>
+            <form id="newProjectData" onsubmit="return false">
+                <label for="projectNameIn" class="newProjectLabel">Project Name:</label><br><br>
+                <input type="text" name="projectNameIn" class="newProjectInput" required><br><br>
+                <label for="projectNotesIn" class="newProjectLabel">Description:</label><br><br>
+                <input type="text" name="projectNotesIn" class="newProjectInput"><br><br>
+                <label for="projectDueDate" class="newProjectLabel">Due:</label><br><br>
+                <input type="datetime-local" name="projectDueDate" class="newProjectInput" required>
+                <div id="priorityButtons">
+                    <p id="newProjectLabel">Priority:</p>
+                    <input type="radio" name="priority" class="newProjectRadioInput" value="3" id='radioProjectHigh'>
+                    <label for="radioProjectHigh" class="newProjectRadioLabel">High</label><br>
+                    <input type="radio" name="priority" class="newProjectRadioInput" value="2" id='radioProjectMed'>
+                    <label for="radioProjectMed" class="newProjectRadioLabel">Medium</label><br>
+                    <input type="radio" name="priority" class="newProjectRadioInput" value="1" id='radioProjectLow'
+                        checked>
+                    <label for="radioProjectLow" class="newProjectRadioLabel">Low</label><br><br>
+                </div>
+
+                <button id="newProjectSubmit">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div id="overlay">
-        <div id="overlayContainer"></div>
-        <div id="newProjectText">Enter new project info</div>
-        <form>
-            <label for="projectNameIn" class="newProjectLabel">Project Name:</label><br>
-            <input type="text" name="projectNameIn" class="newProjectInput">
-            <label for="projectNotesIn" class="newProjectLabel">Description:</label>
-            <input type="text" name="projectNotesIn" class="newProjectInput">
-            <label for="projectDueDate" class="newProjectLabel">Due Date:</label>
-            <input type="text" name="projectDueDate" value="any format" class="newProjectInput">
-            <div id="priorityButtons">
-                <p id="newProjectLabel"></p>
-                <input type="radio" name="highPriority" class="newProjectRadioInput">
-                <label for="highPriority" class="newProjectRadioLabel" value="3">High</label><br>
-                <input type="radio" name="highPriority" class="newProjectRadioInput">
-                <label for="highPriority" class="newProjectRadioLabel" value="2">Medium</label><br>
-                <input type="radio" name="highPriority" class="newProjectRadioInput">
-                <label for="highPriority" class="newProjectRadioLabel" value="1" checked>Low</label><br>
-            </div>
+    <div id="overlay2">
+        <div id="overlay2Container">
+            <div id="newTaskText"></div>
+            <div id="newTaskExit">X</div>
+            <form id="newTaskData" onsubmit="return false">
+                <label for="taskNameIn" class="newTaskLabel">Task Name:</label><br><br>
+                <input type="text" name="taskNameIn" class="newTaskInput" required><br><br>
+                <label for="taskNotesIn" class="newTaskLabel">Description:</label><br><br>
+                <input type="text" name="taskNotesIn" class="newTaskInput"><br><br>
+                <label for="taskDueDate" class="newTaskLabel">Due:</label><br><br>
+                <input type="datetime-local" name="taskDueDate" class="newTaskInput" required>
+                <div id="taskPriorityButtons">
+                    <p id="newTaskLabel">Priority:</p><br>
+                    <input type="radio" name="priority" class="newTaskRadioInput" value="3" id='radioTaskHigh'>
+                    <label for="radioTaskHigh" class="newTaskRadioLabel">High</label><br>
+                    <input type="radio" name="priority" class="newTaskRadioInput" value="2" id='radioTaskMed'>
+                    <label for="radioTaskMed" class="newTaskRadioLabel">Medium</label><br>
+                    <input type="radio" name="priority" class="newTaskRadioInput" value="1" checked id='radioTaskLow'>
+                    <label for="radioTaskLow" class="newTaskRadioLabel">Low</label><br><br>
+                </div>
 
-            <input type="submit" id="newProjectSubmit">
-        </form>
+                <button id="newTaskSubmit">Submit</button>
+            </form>
+        </div>
     </div>
     <script src="main.js" type="module"></script>
 </body>
