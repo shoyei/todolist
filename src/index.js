@@ -1,31 +1,14 @@
-
-import { Project } from './modules/projects.js';
-import { Task } from './modules/tasks.js';
-import { projectLibrary } from './modules/library.js';
 import {DomOutput} from './modules/DOMoutput.js';
+import {DomInput} from './modules/DOMinput.js';
 
-let defaultProject = new Project(0, 'Be Coding Genius', Date(), 1, 'Oh, you know', [])
+import defaultLibrary from './modules/defaultLibrary.js';
 
-defaultProject.addToLibrary()
+defaultLibrary();
+DomInput.newProjectForm();
+DomInput.exitNewProject();
+DomInput.exitNewTask();
 
-let defaultProject2 = new Project(1, 'Be Coding Genius2', Date(), 1, 'Oh, you know', [])
+// Current Bugs: 
+// priority colors show up incorrectly,
+// When saving "new" project or task after editing a respective project or task, the new project/task is saving with the current ID of the previously edited project/task.
 
-defaultProject2.addToLibrary()
-
-let defaultProject3 = new Project(2, 'Be Coding Genius3', Date(), 1, 'Oh, you know', [])
-
-defaultProject3.addToLibrary();
-
-DomOutput.loadProjectList();
-
-console.log(projectLibrary);
-
-let defaultTask1 = new Task(1, 'Finish TOP', 'Doing as much as possible every day', Date(), 1, false)
-
-defaultProject.addTask(defaultTask1);
-
-let defaultTask2 = new Task(2, 'Finish TOP', 'Doing as much as possible every day', Date(), 1, false)
-
-defaultProject.addTask(defaultTask2);
-
-console.log(defaultProject);

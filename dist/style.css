@@ -1,8 +1,423 @@
-body {
+/* ----------Color Palette---------- */
+/*
+Dark: #2B303A
+Dark 2: #7c7c7c
+Light: #92DCE5
+Bright: #D64933
+Highlight: #EEE5E9
+/*
+/* ----------General layout---------- */
+
+html, body {
+    box-sizing: border-box;
+    padding: 0px ;
+    border:0px ; 
+    margin:0px;
+    width:100%;
+    height:100%;
+    cursor: default;
+    font-family: 'Khula', sans-serif;
+    color: #2B303A
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+
+    align-self: flex-start;
+    margin: 20px 0px 20px 15px;
+    margin-top: 20px;
+    font-size: 50px;
+    
+}
+
+#container {
     display: flex;
+    width: auto;
+    height: 100%;
+    background-color: #7c7c7c;
+}
+
+#newProject {
+    padding: 5px;
+    width: auto;
+    align-self: flex-end;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #D64933;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#newProject:hover {
+    padding: 5px;
+    width: auto;
+    align-self: flex-end;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #D64933;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D64933;
+    cursor: pointer;
+}
+
+
+#projects {
+    height: 100%;
+    min-width: 300px;
+    background-color: #92DCE5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#tasks {
+    min-width: 500px;
+    width: 100%;
+    height: 100%;
+    background-color: #EEE5E9;
+}
+
+#openProject {
+    position: absolute;
+    margin: auto auto;
+}
+
+/* ----------Project List---------- */
+
+#projectList {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectListItem {
+    width: 95%;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    background-color: #EEE5E9;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: auto 20px;
+}
+
+.projectListItem:hover {
+    width: 95%;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    background-color: #d8c8cf;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: auto 20px;
+}
+
+.projectListName {
+    grid-column-start: 1;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.projectListDueDate {
+    grid-column-start: 1;
+    font-size: 12px;
+    margin: 5px 0px 5px 0px;
+}
+
+.projectDeleteBtn {
+    display: inline;
+    float: right;
+    grid-column-start: 2;
+    justify-self: end;
+}
+
+.projectDeleteBtn:hover {
+    display: inline;
+    float: right;
+    grid-column-start: 2;
+    justify-self: end;
+    cursor: pointer;
 }
 
 .projectListPriority {
     height: 5px;
-    width: 5px;
+    width: 60px;
+    grid-column-start: 1;
+    
+}
+
+
+/* ----------Task List---------- */
+
+#projectTitle {
+    font-size: 25px;
+    margin: 10px 0px 10px;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#taskFrameTitle {
+    display: grid;
+    grid-template-columns: auto 150px;
+    justify-self: end;
+    width: auto;
+    height: auto;
+    background-color: #2B303A;
+    padding: 10px 10px;
+    color:#EEE5E9;
+}
+
+#projectSubtitle {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.projectDescription {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin: 5px 10px 0px 20px;;
+    font-size: 15px;
+}
+
+.editProjectBtn {
+    text-decoration: underline;
+    font-style: italic;
+    width: 65px;
+    font-size: 12px;
+    margin: 10px 0px 0px 0px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display:inline-block;
+    padding: 3px;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+.editProjectBtn:hover {
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 12px;
+    margin: 10px 0px 0px 0px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display:inline-block;
+    padding: 3px;
+    align-self: flex-end;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 65px;
+}
+
+.taskDeleteBtn:hover {
+    cursor: pointer;
+}
+
+#newTaskDiv{
+    align-self: flex-end;
+    grid-column: 2 / 3 ;
+    grid-row: 1 / 2;
+    grid-row: 1/1;
+    justify-self: end;
+    align-self: start;
+    
+}
+
+.newTaskBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    align-self: flex-end;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #D64933;
+    
+}
+
+.newTaskBtn:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    align-self: flex-end;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #D64933;
+    background-color: #D64933;
+    cursor: pointer;
+}
+
+.taskListItem {
+    width: 95%;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 30px auto 15px
+}
+
+.taskListDue {
+    font-size: 12px;
+    margin-bottom: 5px;
+    grid-column-start: 2;
+}
+
+.taskListName {
+    grid-column-start: 2;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.taskPriority {
+    height: 5px;
+    width: 60px;
+    grid-column-start: 2;
+    margin-bottom: 5px;
+}
+
+.taskDoneBtn {
+    height: 20px;
+    width: 20px;
+    grid-column-start: 1;
+    border: 1px solid #7c7c7c;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-self: start;
+    margin-top: 2.5px
+}
+
+.taskDoneBtn:hover {
+    height: 20px;
+    width: 20px;
+    grid-column-start: 1;
+    border: 1px solid #7c7c7c;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-self: start;
+    margin-top: 2.5px;
+    cursor: pointer;
+}
+
+.editTaskBtn {
+    text-decoration: underline;
+    grid-column-start: 2;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 5px;
+    width: 65px;
+}
+
+.editTaskBtn:hover {
+    text-decoration: underline;
+    grid-column-start: 2;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: 65px;
+}
+
+
+/* ----------Overlays---------- */
+
+#overlay {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#overlayContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 10px;
+    height: 50%;
+    width: 10%;
+    min-height: 500px;
+    min-width: 300px;
+}
+
+.priorityButtons {
+    display: grid;
+    grid-template-columns: 15px auto;
+    grid-template-rows: 30px 30px 30px;
+}
+
+#newProjectExit {
+    width: 12px;
+    height: 15px;
+    align-self: flex-end;
+}
+
+#newProjectSubmit {
+    justify-self: center;
+}
+
+#overlay2 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#overlay2Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    height: 50%;
+    width: 10%;
+    min-height: 500px;
+    min-width: 300px;
+}
+
+#newTaskExit {
+    width: 12px;
+    height: 15px;
+    align-self: flex-end;
+}
+
+#taskNoteInput {
+    width: 0px;
+    height: 0px;
+}
+
+#taskNoteLabel {
+    width: 0px;
+    height: 0px;
+}
+
+#newTaskSubmit {
+    justify-self: center;
 }
